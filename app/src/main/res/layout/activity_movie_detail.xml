@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.MovieDetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/abl">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:expandedTitleGravity="top|start"
+            app:contentScrim="@color/colorPrimary"
+            android:id="@+id/cltMain"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="?android:attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                app:layout_collapseMode="parallax">
+
+                <TextView
+                    android:id="@+id/tvTitleDetail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:textSize="@dimen/text_size_large_title"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Batman Movie" />
+
+                <TextView
+                    android:id="@+id/tvMovieDetail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:textSize="@dimen/text_size_small"
+                    android:textStyle="normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitleDetail"
+                    tools:text="Batman Movie" />
+
+                <ImageView
+                    android:id="@+id/imvMovieDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/image_round_shap"
+                    android:outlineProvider="background"
+                    android:scaleType="centerCrop"
+                    android:transitionName="imvMovie"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMovieDetail" />
+
+                <TextView
+                    android:id="@+id/tvImdb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/tvImdbScore"
+                    app:layout_constraintEnd_toStartOf="@+id/tvRottenTomato"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/colorPrimary"
+                    android:text="imdb" />
+
+                <TextView
+                    android:id="@+id/tvImdbScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/tvImdb"
+                    app:layout_constraintStart_toStartOf="@id/tvImdb"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:textColor="@color/colorPrimary"
+                    tools:text="8.2" />
+
+                <TextView
+                    android:id="@+id/tvRottenTomato"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintBottom_toTopOf="@id/tvRottenTomatoScore"
+                    app:layout_constraintEnd_toStartOf="@id/tvMetacritic"
+                    app:layout_constraintStart_toEndOf="@+id/tvImdb"
+                    android:text="Rotten Tomato" />
+
+                <TextView
+                    android:id="@+id/tvRottenTomatoScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/tvRottenTomato"
+                    app:layout_constraintStart_toStartOf="@id/tvRottenTomato"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    tools:text="78%" />
+
+                <TextView
+                    android:id="@+id/tvMetacritic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintBottom_toTopOf="@id/tvMetacriticScore"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvRottenTomato"
+                    android:text="Metacritic" />
+
+                <TextView
+                    android:id="@+id/tvMetacriticScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/tvMetacritic"
+                    app:layout_constraintStart_toStartOf="@id/tvMetacritic"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    tools:text="78/100" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:id="@+id/tlbDetail"
+                app:layout_collapseMode="pin"
+                />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.07"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:id="@+id/imvBackground"/>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.google.android.material.internal.BaselineLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/bsStart"/>
+
+            <com.google.android.material.internal.BaselineLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/margin_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/bsEnd"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/bsStart"
+                app:layout_constraintEnd_toEndOf="@+id/bsEnd"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="@dimen/text_size_content"
+                android:textStyle="normal"
+                android:layout_marginTop="@dimen/margin_small"
+                tools:text="After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from corruption."
+                android:id="@+id/tvContent"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/bsStart"
+                app:layout_constraintEnd_toEndOf="@+id/bsEnd"
+                app:layout_constraintTop_toBottomOf="@+id/tvContent"
+                android:textSize="@dimen/text_size_title"
+                android:textStyle="bold"
+                android:text="@string/director"
+                android:layout_marginTop="@dimen/margin_small"
+                android:id="@+id/tvDirector"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/bsStart"
+                app:layout_constraintEnd_toEndOf="@+id/bsEnd"
+                app:layout_constraintTop_toBottomOf="@+id/tvDirector"
+                android:textSize="@dimen/text_size_content"
+                android:textStyle="normal"
+                tools:text="christopher Nolan"
+                android:id="@+id/tvDirectorNames"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/bsStart"
+                app:layout_constraintEnd_toEndOf="@+id/bsEnd"
+                app:layout_constraintTop_toBottomOf="@+id/tvDirectorNames"
+                android:textSize="@dimen/text_size_title"
+                android:textStyle="bold"
+                android:text="@string/writer"
+                android:layout_marginTop="@dimen/margin_small"
+                android:id="@+id/tvWriter"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/bsStart"
+                app:layout_constraintEnd_toEndOf="@+id/bsEnd"
+                app:layout_constraintTop_toBottomOf="@+id/tvWriter"
+                android:textSize="@dimen/text_size_content"
+                android:textStyle="normal"
+                tools:text="christopher Nolan"
+                android:id="@+id/tvWriterNames"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/bsStart"
+                app:layout_constraintEnd_toEndOf="@+id/bsEnd"
+                app:layout_constraintTop_toBottomOf="@+id/tvWriterNames"
+                android:textSize="@dimen/text_size_title"
+                android:textStyle="bold"
+                android:text="@string/actors"
+                android:layout_marginTop="@dimen/margin_small"
+                android:id="@+id/tvActors"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/bsStart"
+                app:layout_constraintEnd_toEndOf="@+id/bsEnd"
+                app:layout_constraintTop_toBottomOf="@+id/tvActors"
+                android:textSize="@dimen/text_size_content"
+                android:textStyle="normal"
+                tools:text="Christian Bale, Michael Caine, Liam Neeson, Katie Holmes"
+                android:id="@+id/tvActorsNames"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/bsStart"
+                app:layout_constraintEnd_toEndOf="@+id/bsEnd"
+                app:layout_constraintTop_toBottomOf="@+id/tvActorsNames"
+                android:textSize="@dimen/text_size_title"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@string/awards"
+                android:id="@+id/tvAwards"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/bsStart"
+                app:layout_constraintEnd_toEndOf="@+id/bsEnd"
+                app:layout_constraintTop_toBottomOf="@+id/tvAwards"
+                android:textSize="@dimen/text_size_content"
+                android:textStyle="normal"
+                tools:text="Nominated for 1 Oscar. Another 14 wins and 72 nominations."
+                android:id="@+id/tvAwardsNames"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

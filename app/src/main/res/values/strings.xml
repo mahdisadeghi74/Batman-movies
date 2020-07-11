@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BatmanProject</string>
+    <string name="title">Batman Movies</string>
+    <string name="actors">Actors</string>
+    <string name="director">Director</string>
+    <string name="writer">Writer</string>
+    <string name="awards">Awards</string>
+</resources>
